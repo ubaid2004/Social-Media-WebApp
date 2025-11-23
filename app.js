@@ -1,4 +1,4 @@
-   // Mini Social — Option A dummy casual feed
+   
     const STORAGE = { USERS: 'ms_users_v3', CURRENT: 'ms_current_v3', POSTS: 'ms_posts_v3' };
 
     // DOM
@@ -37,7 +37,7 @@
     // emojis
     const EMOJIS = ['😀','😅','😂','😍','😎','👍','👏','🔥','😢','🤯','🙌','🤍','❤️','🎉','😴','😇','🤔'];
 
-    // app state
+    
     let users = JSON.parse(localStorage.getItem(STORAGE.USERS) || 'null');
     let currentUser = JSON.parse(localStorage.getItem(STORAGE.CURRENT) || 'null');
     let posts = JSON.parse(localStorage.getItem(STORAGE.POSTS) || 'null');
@@ -51,7 +51,7 @@
     function uid(prefix='id'){ return prefix + '_' + Date.now().toString(36) + Math.random().toString(36).slice(2,6); }
     function showToast(msg){ toast.textContent = msg; toast.classList.remove('hidden'); setTimeout(()=> toast.classList.add('hidden'), 2200); }
 
-    // seed casual dummy users + posts (Option A)
+    
     function seed(){
       if(!users){
         users = [
@@ -149,5 +149,6 @@
 
     boot();
 
-    // expose for debugging
+    
+
     window.MiniSocial = { users, posts, currentUser };
